@@ -72,7 +72,7 @@ char **tokenize(char* str)
   char **tokens = malloc((words+1) * sizeof(char*));
   char *end;
   int i;
-  for(i = 0; i <= words; i++)
+  for(i = 0; i < words; i++)
     {
       end = word_terminator(start);
       tokens[i] = copy_str(start, end-start);
