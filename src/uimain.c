@@ -23,22 +23,13 @@ int main()
   input:
     printf("Enter the sting you want to Tokenize.\n>");
     fgets(input, 50, stdin);
-    char *p = word_start(input);
-    printf("Pointer = %c\n", *p);
-    char *ep = word_terminator(p);
-    printf("End Pointer = %c\n", *ep);
-    printf("Length of word = %d\n", (ep-p));
-    int words = count_words(input);
-    printf("%d\n", words);
-    char temp[];
-    temp = copy_str(p, ep-p);
-    int i;
-    while(*(temp+i) != '\0')
-      {
-	printf("%c\n", *(temp+1));
-      }
+    char **tokens = tokenize(input);\
+    print_tokens(tokens);
+    free_tokens(tokens);
+    printf("tokens free\n");
+    print_tokens(tokens);
   quit:
-    printf("quit.");
+    printf("quit.\n");
     return 0;
   }
   done:
